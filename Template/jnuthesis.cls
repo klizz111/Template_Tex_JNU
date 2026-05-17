@@ -5,6 +5,9 @@
 % License: The LaTeX Project Public License 1.3
 % ----------------------------------------------------------------------------
 
+% 标题 宋体 一号
+% 论文题目 宋体 小二 加粗 无下划线
+
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{jnuthesis}[2018/11/12 v0.5 A thesis class for Jinan University]
 
@@ -49,6 +52,7 @@
 \setlength{\lineskiplimit}{3pt}
 \setlength{\lineskip}{3pt}
 
+% 这部分宋体小三加粗
 \renewcommand{\title}{A thesis class for Jinan University}
 \newcommand{\biaoti}{暨南大学本科生论文模板}
 \newcommand{\xueyuan}{信息科学技术学院}
@@ -56,6 +60,7 @@
 \newcommand{\xingming}{暨小小}
 \newcommand{\xuehao}{2018059999}
 \newcommand{\daoshi}{暨大大}
+\newcommand{\kecheng}{课程名称}
 
 \fancypagestyle{plain}{
   \renewcommand{\headrulewidth}{0.4pt}%
@@ -86,7 +91,7 @@
   \centerline{\includegraphics[width=4cm,height=4cm]{jnulogo}}
   \begin{center}
   \zihao{-0}\heiti
-  暨\ 南\ 大\ 学 \\ 本\ 科\ 生\ 毕\ 业\ 论\ 文
+  暨\ 南\ 大\ 学 \\ 本科生课程论文
   \end{center}
   \vfill
   \noindent 论文题目：\fillout{\biaoti}
@@ -96,6 +101,7 @@
   专\qquad 业：\underbox{11em}{\zhuanye}\\[0.6em]
   姓\qquad 名：\underbox{11em}{\xingming}\\[0.6em]
   学\qquad 号：\underbox{11em}{\xuehao}\\[0.6em]
+  课程名称: \underbox{11em}{\kecheng}\\[0.6em]
   指导教师：\underbox{11em}{\daoshi}
   \end{center}
   \vspace{2em}
