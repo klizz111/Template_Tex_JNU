@@ -5,8 +5,12 @@
 % License: The LaTeX Project Public License 1.3
 % ----------------------------------------------------------------------------
 
-% 标题 宋体 一号
+% 标题 宋体 一号 加粗
 % 论文题目 宋体 小二 加粗 无下划线
+% 目录 宋体 三号
+% 目录内容 宋体 11号
+% 一级标题 宋体 三号 加粗
+% 正文 宋体 小四号
 
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{jnuthesis}[2018/11/12 v0.5 A thesis class for Jinan University]
@@ -22,7 +26,9 @@
 % 四号    小四号    五号      小五号
 % 14bp    12bp      10.5bp    9bp
 \LoadClass[cs4size,UTF8,noindent,openany]{ctexbook}
-\AtBeginDocument{\zihao{4}}
+\setCJKfamilyfont{zhsong}[AutoFakeBold = {2.17}]{SimSun}
+\renewcommand*{\songti}{\CJKfamily{zhsong}}
+\AtBeginDocument{\songti\zihao{-4}}
 
 \RequirePackage[a4paper,left=25mm,right=25mm,top=25mm,bottom=25mm]{geometry}
 
@@ -88,13 +94,13 @@
 
 \renewcommand{\titlepage}{%
   \thispagestyle{empty}
-  \centerline{\includegraphics[width=4cm,height=4cm]{jnulogo}}
+  \centerline{\includegraphics[width=4cm,height=4cm]{images/jnulogo.png}}
   \begin{center}
-  \zihao{-0}\heiti
+  \songti\zihao{1}\bfseries
   暨\ 南\ 大\ 学 \\ 本科生课程论文
   \end{center}
   \vfill
-  \noindent 论文题目：\fillout{\biaoti}
+  \noindent {\songti\zihao{-2}\bfseries 论文题目：\biaoti}
   \vfill
   \begin{center}
   学\qquad 院：\underbox{11em}{\xueyuan}\\[0.6em]
@@ -158,18 +164,18 @@
 \setcounter{tocdepth}{3}
 \setcounter{secnumdepth}{3} % 默认 subsubsection 不显示编号
 
-\renewcommand{\contentsname}{\hfill 目\quad 录\hfill}
+\renewcommand{\contentsname}{\hfill {\songti\zihao{3} 目\quad 录}\hfill}
 
 \RequirePackage{titletoc}
 %\titlecontents{标题层次}[左间距]{上间距和整体格式}{标题序号}{标题内容}{指引线和页码}[下间距]
-\titlecontents{chapter}[1em]{\addvspace{.3em}\bfseries}{\contentslabel{1em}}{}
+\titlecontents{chapter}[1em]{\addvspace{.3em}\songti\fontsize{11bp}{13.2bp}\selectfont}{\contentslabel{1em}}{}
                             {\ \titlerule*[5pt]{$\cdot$}\contentspage}[\addvspace{.3em}]
-\titlecontents{section}[2.8em]{}{\contentslabel{1.8em}}{}{\ \titlerule*[5pt]{$\cdot$}\contentspage}
-\titlecontents{subsection}[4.6em]{}{\contentslabel{2.6em}}{}{\ \titlerule*[5pt]{$\cdot$}\contentspage}
-\titlecontents{subsubsection}[6.4em]{}{\contentslabel{3.4em}}{}{\ \titlerule*[5pt]{$\cdot$}\contentspage}
+\titlecontents{section}[2.8em]{\songti\fontsize{11bp}{13.2bp}\selectfont}{\contentslabel{1.8em}}{}{\ \titlerule*[5pt]{$\cdot$}\contentspage}
+\titlecontents{subsection}[4.6em]{\songti\fontsize{11bp}{13.2bp}\selectfont}{\contentslabel{2.6em}}{}{\ \titlerule*[5pt]{$\cdot$}\contentspage}
+\titlecontents{subsubsection}[6.4em]{\songti\fontsize{11bp}{13.2bp}\selectfont}{\contentslabel{3.4em}}{}{\ \titlerule*[5pt]{$\cdot$}\contentspage}
 
 \CTEXsetup[name={,},number={\arabic{chapter}},
-           format={\huge\bfseries\raggedright},nameformat={\huge\bfseries},aftername={\ }]{chapter}
+           format={\songti\zihao{3}\bfseries\raggedright},nameformat={\songti\zihao{3}\bfseries},aftername={\ }]{chapter}
 \CTEXsetup[name={,},number={\arabic{chapter}.\arabic{section}},
            format={\Large\bfseries\raggedright},nameformat={\Large\bfseries},aftername={\ }]{section}
 \CTEXsetup[name={,},number={\arabic{chapter}.\arabic{section}.\arabic{subsection}},
