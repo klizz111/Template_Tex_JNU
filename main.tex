@@ -1,0 +1,67 @@
+% -*- coding: utf-8 -*-
+% 主论文主文件，基于 jnuthesis 模板，并将绪论拆分为独立文件。
+\documentclass[14pt]{jnuthesis}
+\usepackage{xeCJK}
+\usepackage{amsmath,amssymb}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{comment}
+\pgfplotsset{compat=1.18}
+\setlength{\headheight}{13pt}
+% 使用类文件 jnuthesis.cls 中对章节样式的默认设置（宋体，三号，加粗，左对齐）
+% 如需更改，请编辑 jnuthesis.cls 中的 CTEXsetup 对应项。
+
+% 不强制章节在新页（取消双页清页），使章节尽量紧接排列
+\let\cleardoublepage\relax
+
+\renewcommand{\biaoti}{Null}
+\renewcommand{\xueyuan}{网络空间安全学院}
+\renewcommand{\zhuanye}{Null}
+\renewcommand{\xingming}{Null}
+\renewcommand{\xuehao}{000000000}
+\renewcommand{\kecheng}{Null}
+\renewcommand{\daoshi}{Null}
+
+\begin{document}
+\titlepage
+\pagenumbering{arabic}
+\tableofcontents
+
+\addcontentsline{toc}{chapter}{\hspace{-1em}摘要}
+
+\zhaiyao
+empty
+
+\guanjianci
+empty
+
+\newpage
+
+
+
+\begin{comment}
+{
+\let\clearpage\relax
+\let\cleardoublepage\relax
+\input{chapters/chapter1_introduction}
+\input{chapters/chapter2_prelim}
+\input{chapters/chapter3_system_model}
+\input{chapters/chapter4_cube}
+\input{chapters/chapter5_security}
+\input{chapters/chapter6_performance}
+\input{chapters/chapter7_conclusion}
+}
+\end{comment}
+
+\section{Test}
+Test~\cite{boneh2004short}
+
+\bibliographystyle{unsrt}\addcontentsline{toc}{chapter}{\hspace{-1em}参考文献}
+
+\bibliography{reference}
+
+\appendix
+
+\end{document}

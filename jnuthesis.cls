@@ -26,7 +26,7 @@
 % 四号    小四号    五号      小五号
 % 14bp    12bp      10.5bp    9bp
 \LoadClass[cs4size,UTF8,noindent,openany]{ctexbook}
-\setCJKfamilyfont{zhsong}[AutoFakeBold = {2.17}]{SimSun}
+\setCJKfamilyfont{zhsong}[AutoFakeBold = {2.17}, AutoFakeSlant]{SimSun}
 \renewcommand*{\songti}{\CJKfamily{zhsong}}
 \AtBeginDocument{\songti\zihao{-4}}
 
@@ -103,12 +103,12 @@
   \noindent {\songti\zihao{-2}\bfseries 论文题目：\biaoti}
   \vfill
   \begin{center}
-  学\qquad 院：\underbox{11em}{\xueyuan}\\[0.6em]
-  专\qquad 业：\underbox{11em}{\zhuanye}\\[0.6em]
-  姓\qquad 名：\underbox{11em}{\xingming}\\[0.6em]
-  学\qquad 号：\underbox{11em}{\xuehao}\\[0.6em]
-  课程名称: \underbox{11em}{\kecheng}\\[0.6em]
-  指导教师：\underbox{11em}{\daoshi}
+  {\songti\bfseries 学\qquad 院：} \underbox{11em}{\bfseries\xueyuan}\\[0.6em]
+  {\songti\bfseries 专\qquad 业：} \underbox{11em}{\bfseries\zhuanye}\\[0.6em]
+  {\songti\bfseries 姓\qquad 名：} \underbox{11em}{\bfseries\xingming}\\[0.6em]
+  {\songti\bfseries 学\qquad 号：}\underbox{11em}{\bfseries\xuehao}\\[0.6em]
+  {\songti\bfseries 课程名称：} \underbox{11em}{\bfseries\kecheng}\\[0.6em]
+  {\songti\bfseries 指导教师：} \underbox{11em}{\bfseries\daoshi}
   \end{center}
   \vspace{2em}
   \centerline{\today}
@@ -168,20 +168,20 @@
 
 \RequirePackage{titletoc}
 %\titlecontents{标题层次}[左间距]{上间距和整体格式}{标题序号}{标题内容}{指引线和页码}[下间距]
-\titlecontents{chapter}[1em]{\addvspace{.3em}\songti\fontsize{11bp}{13.2bp}\selectfont}{\contentslabel{1em}}{}
-                            {\ \titlerule*[5pt]{$\cdot$}\contentspage}[\addvspace{.3em}]
-\titlecontents{section}[2.8em]{\songti\fontsize{11bp}{13.2bp}\selectfont}{\contentslabel{1.8em}}{}{\ \titlerule*[5pt]{$\cdot$}\contentspage}
-\titlecontents{subsection}[4.6em]{\songti\fontsize{11bp}{13.2bp}\selectfont}{\contentslabel{2.6em}}{}{\ \titlerule*[5pt]{$\cdot$}\contentspage}
-\titlecontents{subsubsection}[6.4em]{\songti\fontsize{11bp}{13.2bp}\selectfont}{\contentslabel{3.4em}}{}{\ \titlerule*[5pt]{$\cdot$}\contentspage}
+\titlecontents{chapter}[1em]{\addvspace{5pt}\songti\fontsize{11bp}{12pt}\selectfont}{\contentslabel{1em}}{}
+                            {\ \titlerule*[5pt]{$\cdot$}\contentspage}[\addvspace{5pt}]
+\titlecontents{section}[2.8em]{\songti\fontsize{11bp}{12bp}\selectfont}{\contentslabel{1.8em}}{}{\ \titlerule*[5pt]{$\cdot$}\contentspage}
+\titlecontents{subsection}[4.6em]{\songti\fontsize{11bp}{12bp}\selectfont}{\contentslabel{2.6em}}{}{\ \titlerule*[5pt]{$\cdot$}\contentspage}
+\titlecontents{subsubsection}[6.4em]{\songti\fontsize{11bp}{12bp}\selectfont}{\contentslabel{3.4em}}{}{\ \titlerule*[5pt]{$\cdot$}\contentspage}
 
-\CTEXsetup[name={,},number={\arabic{chapter}},
-           format={\songti\zihao{3}\bfseries\raggedright},nameformat={\songti\zihao{3}\bfseries},aftername={\ }]{chapter}
+\CTEXsetup[name={,},number={\arabic{chapter}.},
+           format={\Large\bfseries\raggedright},nameformat={\Large\bfseries},aftername={\ },beforeskip={0pt},afterskip={6pt}]{chapter}
 \CTEXsetup[name={,},number={\arabic{chapter}.\arabic{section}},
-           format={\Large\bfseries\raggedright},nameformat={\Large\bfseries},aftername={\ }]{section}
+           format={\large\bfseries\raggedright},nameformat={\large\bfseries},aftername={\ },beforeskip={6pt},afterskip={6pt}]{section}
 \CTEXsetup[name={,},number={\arabic{chapter}.\arabic{section}.\arabic{subsection}},
-           format={\large\bfseries\raggedright},nameformat={\large\bfseries},aftername={\ }]{subsection}
+           format={\large\bfseries\raggedright},nameformat={\large\bfseries},aftername={\ },beforeskip={4pt},afterskip={4pt}]{subsection}
 \CTEXsetup[name={,},number={\arabic{chapter}.\arabic{section}.\arabic{subsection}.\arabic{subsubsection}},
-           format={\bfseries\raggedright},nameformat={\bfseries},aftername={\ }]{subsubsection}
+           format={\bfseries\raggedright},nameformat={\bfseries},aftername={\ },beforeskip={2pt},afterskip={2pt}]{subsubsection}
 
 \newcommand\ignorepars{\@ifnextchar\par{\expandafter\ignorepars\@gobble}{}}
 
@@ -209,6 +209,9 @@
   \setlength{\belowdisplayskip}{4pt minus 2pt}
   \setlength{\abovedisplayshortskip}{2pt}
   \setlength{\belowdisplayshortskip}{2pt}
+  % 统一行距（倍行距）并取消段间额外垂直间距，便于整体样式一致
+  \renewcommand{\baselinestretch}{1.25}\selectfont
+  \setlength{\parskip}{0pt}
 }
 
 \setlength\arraycolsep{4pt}
